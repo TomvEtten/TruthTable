@@ -9,4 +9,5 @@
     <string name="true_text">T</string>
     <string name="empty"> </string>
     <string name="correct"> Correct </string>
+    <string name="hint"> T / F</string>
 </resources>

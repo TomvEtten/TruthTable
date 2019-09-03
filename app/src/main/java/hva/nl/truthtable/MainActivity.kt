@@ -10,31 +10,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener {checkAnswer()}
+        btnSubmit.setOnClickListener { checkAnswer() }
     }
 
     private fun checkAnswer() {
-        var succes = true
+        val answer1 = input1.text.toString()
+        val answer2 = input2.text.toString()
+        val answer3 = input3.text.toString()
+        val answer4 = input4.text.toString()
 
-        val answer1 = answer1.text.toString()
-        val answer2 = answer2.text.toString()
-        val answer3 = answer3.text.toString()
-        val answer4 = answer4.text.toString()
-
-        if (answer1 != R.string.true_text.toString()) {
-            succes = false
-        }
-        if (answer2 != R.string.false_text.toString()) {
-            succes = false
-        }
-        if (answer3 != R.string.false_text.toString()) {
-            succes = false
-        }
-        if (answer4 != R.string.false_text.toString()) {
-            succes = false
-        }
-
-        if (!succes) {
+        if (answer1 != R.string.true_text.toString() && answer2 != R.string.false_text.toString() && answer3 != R.string.false_text.toString() && answer4 != R.string.false_text.toString()) {
             Toast.makeText(this, getString(R.string.false_text), Toast.LENGTH_LONG).show()
             return
         }
